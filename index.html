@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos · Sarah Loric · Consultante en évolution de carrière</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sand: #F5F0E8;
+    --warm-white: #FDFBF7;
+    --ink: #1C1A17;
+    --ink-soft: #4A4540;
+    --ink-muted: #8A847C;
+    --accent: #C4714A;
+    --accent-light: #F0DDD3;
+    --border: #E8E2D8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--warm-white); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { padding: 24px 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--accent); font-style: italic; }
+  .nav-back { font-size: 12px; font-weight: 400; letter-spacing: 0.08em; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero { padding: 28px 80px 24px; border-bottom: 1px solid var(--border); }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .hero-title { font-family: var(--font-display); font-size: clamp(32px, 3.5vw, 48px); font-weight: 300; line-height: 1.08; margin-bottom: 16px; }
+  .hero-title em { font-style: italic; color: var(--accent); }
+  .hero-subtitle { font-size: 15px; font-weight: 300; color: var(--ink-soft); line-height: 1.85; max-width: 580px; }
+  .hero-subtitle strong { font-weight: 500; color: var(--ink); }
+  .hero-name { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink-muted); letter-spacing: 0.08em; margin-bottom: 8px; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .hero-tag { font-size: 11px; font-weight: 400; letter-spacing: 0.08em; color: var(--accent); border: 1px solid var(--accent); padding: 6px 14px; border-radius: 2px; }
+
+  /* INTRO */
+  .intro { padding: 16px 80px 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .intro-block { padding: 18px 20px; background: var(--sand); border-top: 2px solid transparent; transition: border-color 0.25s, background 0.25s; }
+  .intro-block:hover { border-color: var(--accent); background: var(--accent-light); }
+  .intro-label { font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .intro-text { font-size: 14px; font-weight: 300; color: var(--ink-soft); line-height: 1.85; }
+  .intro-text em { font-style: italic; color: var(--ink); }
+
+  /* FORMATION */
+  .formation { padding: 0 80px 32px; }
+  .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .section-title { font-family: var(--font-display); font-size: clamp(28px, 3vw, 40px); font-weight: 300; line-height: 1.2; margin-bottom: 8px; }
+  .section-title em { font-style: italic; color: var(--accent); }
+  .section-sub { font-size: 14px; font-weight: 300; color: var(--ink-muted); margin-bottom: 16px; }
+  .form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .form-card { background: var(--warm-white); border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 18px 20px; transition: background 0.25s, box-shadow 0.25s; }
+  .form-card:hover { background: var(--sand); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+  .form-card-num { font-family: var(--font-display); font-size: 32px; font-weight: 300; color: var(--border); line-height: 1; margin-bottom: 16px; }
+  .form-card-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .form-card-text { font-size: 12px; font-weight: 300; color: var(--ink-muted); line-height: 1.7; }
+  .form-card-highlight { font-size: 11px; font-weight: 500; color: var(--accent); margin-top: 10px; letter-spacing: 0.04em; }
+
+  /* CONTACT */
+  .contact-section { padding: 40px 80px; background: var(--sand); border-top: 1px solid var(--border); }
+  .contact-section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .contact-section-title { font-family: var(--font-display); font-size: clamp(32px, 3vw, 48px); font-weight: 300; color: var(--ink); line-height: 1.2; margin-bottom: 10px; }
+  .contact-section-title em { font-style: italic; color: var(--accent); }
+
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .contact-card { background: white; padding: 20px 22px; border-top: 3px solid var(--accent); transition: background 0.25s, box-shadow 0.25s; text-decoration: none; display: block; }
+  .contact-card:hover { background: var(--accent-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+  .contact-card-icon { font-size: 22px; margin-bottom: 16px; color: var(--accent); }
+  .contact-card-label { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
+  .contact-card-value { font-size: 15px; font-weight: 400; color: var(--ink); line-height: 1.4; transition: color 0.2s; }
+  .contact-card:hover .contact-card-value { color: var(--accent); }
+
+  /* FOOTER */
+  footer { background: var(--ink); padding: 20px 80px; display: flex; align-items: center; justify-content: center; }
+  .footer-copy { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .hero { padding: 60px 24px; }
+    .intro { grid-template-columns: 1fr; padding: 60px 24px; }
+    .formation { padding: 0 24px 60px; }
+    .form-grid { grid-template-columns: 1fr 1fr; }
+    .contact-section { padding: 60px 24px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { padding: 16px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-name">Sarah Loric</p>
+  <h1 class="hero-title">Consultante en évolution de <em>carrière.</em></h1>
+  <p class="hero-subtitle">
+    <strong>Consultante certifiée · Diplômée Garance & Moi</strong><br>
+    10 ans d'expérience en digital & CRM · Spécialisée dans l'accompagnement des femmes en transition professionnelle.
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag">Bilan de compétences</span>
+    <span class="hero-tag">VAE · spécialité digital</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-block">
+    <p class="intro-label">Mon parcours</p>
+    <p class="intro-text">10 ans dans le digital et le CRM, dans des environnements internationaux et exigeants, avant de me former à l'accompagnement des transitions professionnelles.</p>
+  </div>
+  <div class="intro-block">
+    <p class="intro-label">Ce qui m'a conduite ici</p>
+    <p class="intro-text">Des valeurs que je n'ai jamais pu mettre de côté : la bienveillance, l'écoute, et une conviction profonde que chaque femme a les ressources pour avancer — elle a besoin d'un espace pour être écoutée, s'exprimer librement, et d'une méthode sur mesure.</p>
+  </div>
+  <div class="intro-block">
+    <p class="intro-label">Ma singularité</p>
+    <p class="intro-text">J'ai moi-même vécu une transition professionnelle majeure. Ce n'est pas une théorie pour moi — c'est une expérience incarnée, qui me donne une empathie réelle pour celles que j'accompagne.</p>
+  </div>
+</div>
+
+<!-- FORMATION -->
+<div class="formation">
+  <p class="section-label">Formation certifiante</p>
+  <h2 class="section-title">Accompagner les <em>Transitions Professionnelles</em></h2>
+  <p class="section-sub">Garance & Moi · 2026</p>
+  <div class="form-grid">
+    <div class="form-card">
+      <div class="form-card-num">01</div>
+      <p class="form-card-title">Psychologie des transitions</p>
+      <p class="form-card-text">Mécanismes émotionnels, réactions face au changement</p>
+    </div>
+    <div class="form-card">
+      <div class="form-card-num">02</div>
+      <p class="form-card-title">Techniques d'entretien & alliance de travail</p>
+      <p class="form-card-text">Reformulation, approche narrative, entretien initial, tutorat supervisé</p>
+    </div>
+    <div class="form-card">
+      <div class="form-card-num">03</div>
+      <p class="form-card-title">Tests & évaluation des personnes</p>
+      <p class="form-card-text">RIASEC, outils psychométriques, restitution et objectivation</p>
+    </div>
+    <div class="form-card">
+      <div class="form-card-num">04</div>
+      <p class="form-card-title">Construction du projet professionnel</p>
+      <p class="form-card-text">Analyse parcours, exploration métiers, plan d'action, techniques de recherche d'emploi</p>
+    </div>
+    <div class="form-card">
+      <div class="form-card-num">05</div>
+      <p class="form-card-title">Écosystème formation & dispositifs</p>
+      <p class="form-card-text">CPF, VAE, CEP, bilan de compétences, GEPP, entretien professionnel</p>
+      <p class="form-card-highlight">↗ VAE · expertise spécifique secteur digital & CRM</p>
+    </div>
+    <div class="form-card">
+      <div class="form-card-num">06</div>
+      <p class="form-card-title">Déontologie & cadre d'exercice</p>
+      <p class="form-card-text">Éthique professionnelle, confidentialité, statuts d'exercice, offre de service</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section">
+  <p class="contact-section-label">Me contacter</p>
+  <h2 class="contact-section-title">Parlons de <em>votre projet.</em></h2>
+  <div class="contact-grid">
+    <a href="mailto:sarah.loric@gmail.com" class="contact-card">
+      <div class="contact-card-icon">✉</div>
+      <p class="contact-card-label">Email</p>
+      <p class="contact-card-value">sarah.loric@gmail.com</p>
+    </a>
+    <a href="tel:+33609327578" class="contact-card">
+      <div class="contact-card-icon">☏</div>
+      <p class="contact-card-label">Téléphone</p>
+      <p class="contact-card-value">06 09 32 75 78</p>
+    </a>
+    <a href="https://www.linkedin.com/in/sarahloric" target="_blank" class="contact-card">
+      <div class="contact-card-icon">in</div>
+      <p class="contact-card-label">LinkedIn</p>
+      <p class="contact-card-value">linkedin.com/in/sarahloric</p>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p class="footer-copy">© 2026 Sarah Loric · Consultante en évolution de carrière</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.intro-block, .form-card, .contact-card').forEach(el => {
+    el.style.opacity = '0'; el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
